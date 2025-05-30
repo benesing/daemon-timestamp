@@ -29,15 +29,13 @@
     "dist-esm/",
     "dist-cjs/"
   ],
-  {
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/benesing/daemon-timestamp.git"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benesing/daemon-timestamp.git"
     },
-    "homepage": "https://github.com/benesing/daemon-timestamp#readme",
-    "bugs": {
-      "url": "https://github.com/benesing/daemon-timestamp/issues"
-    }
+  "homepage": "https://github.com/benesing/daemon-timestamp#readme",
+  "bugs": {
+    "url": "https://github.com/benesing/daemon-timestamp/issues"
   },
   "keywords": [
     "timestamp",
