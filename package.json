@@ -1,0 +1,13 @@
+{
+  "name": "daemon-timestamp",
+  "version": "1.0.0",
+  "description": "Local timestamp formatting for daemon logs",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": ["timestamp", "logging", "daemon"],
+  "author": "Ben Singer",
+  "license": "MIT"
+}
