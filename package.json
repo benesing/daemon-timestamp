@@ -2,12 +2,41 @@
   "name": "daemon-timestamp",
   "version": "1.0.0",
   "description": "Local timestamp formatting for daemon logs",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "type": "module",
+  "main": "./dist-cjs/index.js",
+  "module": "./dist-esm/index.js",
+  "types": "./dist-esm/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "npm run build:esm && npm run build:cjs && npm run post-build",
+    "build:esm": "tsc",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "post-build": "echo '{\"type\":\"commonjs\"}' > dist-cjs/package.json",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": ["timestamp", "logging", "daemon"],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist-esm/index.d.ts",
+        "default": "./dist-esm/index.js"
+      },
+      "require": {
+        "types": "./dist-cjs/index.d.ts",
+        "default": "./dist-cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist-esm/",
+    "dist-cjs/"
+  ],
+  "keywords": [
+    "timestamp",
+    "logging",
+    "daemon"
+  ],
   "author": "Ben Singer",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
 }
